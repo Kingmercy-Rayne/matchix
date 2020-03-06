@@ -94,8 +94,9 @@ nav .toggle {
 .logout{
   flex: 0 0 5%;
   background: none;
-  border: solid 2px crimson;
-  border-radius: 5px;
+  border: solid 1.5px crimson;
+  border-radius: 10px;
+  color:red;
   /* align-self: center;
   justify-self: center; */
 }
