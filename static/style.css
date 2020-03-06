@@ -1,0 +1,108 @@
+@font-face{
+  src: url("./fa/webfonts/fa-brands-400.ttf");
+}
+:root {
+  --text-color-primary: #333;
+  --text-color-alt: #fff;
+  --button-bg-color: rgb(31, 29, 29);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+img {
+  width: 100%;
+  object-fit: cover;
+}
+body {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: var(--text-color-primary);
+  width: 100vw;
+}
+nav {
+  width: 100;
+  height: 40px;
+  display: flex;
+  border: solid 1px crimson;
+  align-items:center;
+  justify-content:center;
+}
+nav .toggle {
+  background: none;
+  text-align: center;
+  
+  flex: 0 0 5%;
+  /*TODO: find out why harmburger class aligns left and needs flexbox hack*/
+  display: flex;
+  justify-content:center;
+  align-items:center;
+  padding:1em;
+}
+.hamburger {
+  display: block;
+  position: relative;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+  height: 3px;
+  width: 20px;
+  background: var(--text-color-primary);
+}
+.hamburger::before, 
+.hamburger::after{
+    content: '';
+    position:absolute;
+    left:0;
+}
+.hamburger::before{
+    bottom:6px;
+}
+.hamburger::after{
+    top:6px;
+}
+.logo{
+    font-family: 'Trade Winds', cursive;
+    font-size: 1.5rem;
+    flex:0 0 10%;
+    border:solid 1px green;
+    text-align:center;
+  
+}
+.page_genre{
+  flex: 0 0 30%;
+  text-align: center;
+}
+.ico{
+  flex: 0 0 5%;
+  font-size:1.2rem;
+  margin: 0 0.4em;
+  
+}
+.logout{
+  flex: 0 0 5%;
+  background: none;
+  border: solid 2px crimson;
+  border-radius: 5px;
+  /* align-self: center;
+  justify-self: center; */
+}
+.wrapper {
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  align-items: center;
+}
