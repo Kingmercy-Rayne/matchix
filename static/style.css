@@ -1,9 +1,7 @@
-@font-face{
-  src: url("./fa/webfonts/fa-brands-400.ttf");
-}
 :root {
   --text-color-primary: #333;
   --text-color-alt: #fff;
+  --text-color-tri: rgb(226, 100, 100);
   --button-bg-color: rgb(31, 29, 29);
 }
 
@@ -25,37 +23,83 @@ img {
   object-fit: cover;
 }
 body {
-  font-family: "Lucida Sans", "Lu cida Sans Regular", "Lucida Grande",
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   color: var(--text-color-primary);
   width: 100vw;
+}
+.tertiary-text {
+  color: var(--text-color-tri);
+  font-size: 0.8rem;
 }
 nav {
   width: 100;
   height: 40px;
   display: flex;
   border: solid 1px #444;
-  align-items:center;
-  justify-content:center;
+  align-items: center;
+  justify-content: center;
   min-height: 8vh;
 }
-.sidepane{
+.sidepane {
   position: absolute;
-  top:8vh;
-  left:0;
-  height:90vh;
-  width:40%;
-  background-color: #1D273F;
+  color: var(--text-color-alt);
+  top: 8vh;
+  left: 0;
+  height: 90vh;
+  width: 20%;
+  background-color: #1d273f;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: flex-start;
 }
+@media (max-width: 1000px) {
+  .sidepane {
+    width: 50%;
+  }
+}
+.sidepane hr {
+  margin: 1em 0;
+  justify-self: center;
+  align-self: flex-end;
+}
+
+.latest_score {
+  padding: 1em;
+  width: 100%;
+}
+.scoreboard {
+  width: 100%;
+  border: solid thin #888;
+  display: flex;
+  justify-content: space-around;
+}
+.scoreboard__pane {
+  display: flex;
+  align-items: center;
+  /* border: solid thin green; */
+  width: 100%;
+  padding: 0.5em 0;
+}
+.scoreboard__pane span {
+  /* border: solid thin blue; */
+  padding: 0.4em;
+  display: flex;
+}
+
+/* ========== rest of nav ============== */
+
 nav .toggle {
+  /* container class for hamburger */
   background: none;
   text-align: center;
-  height:100%;
+  height: 100%;
   flex: 0 0 5%;
   /*TODO: find out why harmburger class aligns left and needs flexbox hack*/
   display: flex;
-  justify-content:center;
-  align-items:center;
+  justify-content: center;
+  align-items: center;
 }
 .hamburger {
   display: block;
@@ -69,43 +113,42 @@ nav .toggle {
   width: 20px;
   background: var(--text-color-primary);
 }
-.hamburger::before, 
-.hamburger::after{
-    content: '';
-    position:absolute;
-    left:0;
+.hamburger::before,
+.hamburger::after {
+  content: "";
+  position: absolute;
+  left: 0;
 }
-.hamburger::before{
-    bottom:6px;
+.hamburger::before {
+  bottom: 6px;
 }
-.hamburger::after{
-    top:6px;
+.hamburger::after {
+  top: 6px;
 }
-.logo{
-    font-family: 'Trade Winds', cursive;
-    font-size: 1.5rem;
-    flex:0 0 10%;
-    text-align:center;
-    padding: 0 0.5em;
+.logo {
+  font-family: "Trade Winds", cursive;
+  font-size: 1.5rem;
+  flex: 0 0 10%;
+  text-align: center;
+  padding: 0 0.5em;
 }
-.page_genre{
+.page_genre {
   flex: 1 0 30%;
   text-align: center;
 }
-.ico{
+.ico {
   flex: 0 0 5%;
-  font-size:1.2rem;
+  font-size: 1.2rem;
   margin: 0 0.4em;
-  
 }
-.logout{
+.logout {
   flex: 0 0 5%;
   background: none;
   border: solid 1.5px crimson;
   border-radius: 10px;
-  padding:0.6em 1.5em;
-  color:red;
-  margin: 0 1em;
+  padding: 0.6em 1.5em;
+  color: red;
+  margin-right: 1em;
   /* align-self: center;
   justify-self: center; */
 }
