@@ -3,6 +3,7 @@
   --text-color-alt: #fff;
   --text-color-tri: rgb(226, 100, 100);
   --button-bg-color: rgb(31, 29, 29);
+  --button-bg-color-alt: #fff;
 }
 
 * {
@@ -32,6 +33,17 @@ body {
   color: var(--text-color-tri);
   font-size: 0.8rem;
 }
+.button--default{
+  background: none;
+  border: solid 1.5px #111;
+  border-radius: 15px;
+  padding: 0.6em 1.5em;
+  transition: all ease-in-out 20ms;
+}
+.button--default:hover{
+  transform: scale(1.1);
+  border-radius:0;
+}
 nav {
   width: 100;
   height: 40px;
@@ -46,7 +58,7 @@ nav {
   color: var(--text-color-alt);
   top: 8vh;
   left: 0;
-  height: 90vh;
+  height: 92vh;
   width: 20%;
   background-color: #1d273f;
   display: flex;
@@ -66,12 +78,20 @@ nav {
 }
 
 .latest_score {
-  padding: 1em;
+  padding: 3em 1em;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.latest_score hr{
   width: 100%;
 }
+
 .scoreboard {
   width: 100%;
-  border: solid thin #888;
+  /* border: solid thin #888; */
   display: flex;
   justify-content: space-around;
 }
@@ -87,7 +107,37 @@ nav {
   padding: 0.4em;
   display: flex;
 }
-
+.latest_score button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1em;
+  margin-left: auto;
+  font-weight: bold;
+  border: solid thin var(--text-color-alt);
+  background: var(--button-bg-color-alt);
+  color: var(--text-color-primary);
+}
+.sidepane--links{
+  width:100%;
+}
+.sidepane--links ul{
+  margin-top:1em;
+  display: flex;
+  flex-direction:column;
+  justify-content: space-between;
+}
+.sidepane--links li {
+  border-bottom: solid thin #888;
+  padding: 1.5em 0.5em;
+  margin: 0 1em;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.sidepane--links h5{
+  padding: 0 0 0 2em;
+}
 /* ========== rest of nav ============== */
 
 nav .toggle {
@@ -141,12 +191,9 @@ nav .toggle {
   font-size: 1.2rem;
   margin: 0 0.4em;
 }
-.logout {
+.logout--btn {
   flex: 0 0 5%;
-  background: none;
   border: solid 1.5px crimson;
-  border-radius: 10px;
-  padding: 0.6em 1.5em;
   color: red;
   margin-right: 1em;
   /* align-self: center;
