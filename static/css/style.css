@@ -28,27 +28,29 @@ body {
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   color: var(--text-color-primary);
   width: 100vw;
+  overflow-x: hidden;
 }
 .tertiary-text {
   color: var(--text-color-tri);
   font-size: 0.8rem;
 }
-.button--default{
+.button--default {
   background: none;
   border: solid 1.5px #111;
   border-radius: 15px;
   padding: 0.6em 1.5em;
   transition: all ease-in-out 20ms;
 }
-.button--default:hover{
+.button--default:hover {
   transform: scale(1.1);
-  border-radius:0;
+  border-radius: 0;
 }
 nav {
+  position: sticky;
   width: 100;
   height: 40px;
   display: flex;
-  border: solid 1px #444;
+  /* border: solid 1px #444; */
   align-items: center;
   justify-content: center;
   min-height: 8vh;
@@ -58,23 +60,33 @@ nav {
   color: var(--text-color-alt);
   top: 8vh;
   left: 0;
-  height: 92vh;
   width: 20%;
   background-color: #1d273f;
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: flex-start;
+  transform: translateX(-100%);
+  padding-bottom: 2em;
+  transition: all 300ms ease-in-out;
 }
-@media (max-width: 1000px) {
+@media (max-width: 1200px) {
   .sidepane {
     width: 50%;
+  }
+}
+@media (max-width: 700px) {
+  .sidepane {
+    width: 75%;
   }
 }
 .sidepane hr {
   margin: 1em 0;
   justify-self: center;
-  align-self: flex-end;
+}
+.nav-active {
+  /* toggled class to bring sidepane out of hiding */
+  transform: translateX(0%);
 }
 
 .latest_score {
@@ -85,7 +97,7 @@ nav {
   justify-content: flex-start;
   align-items: flex-start;
 }
-.latest_score hr{
+.latest_score hr {
   width: 100%;
 }
 
@@ -95,19 +107,39 @@ nav {
   display: flex;
   justify-content: space-around;
 }
+.scoreboard__p {
+  min-width: 80%;
+}
 .scoreboard__pane {
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   /* border: solid thin green; */
   width: 100%;
-  padding: 0.5em 0;
+  padding: 0.5em 0 0.5em 0.2em;
 }
-.scoreboard__pane span {
-  /* border: solid thin blue; */
-  padding: 0.4em;
+.scoreboard__pane h3 {
   display: flex;
+  /* color: yellow; */
+  width: 10%;
 }
-.latest_score button{
+.scoreboard__pane p {
+  display: flex;
+  align-items: center;
+  /* border: solid thin cyan; */
+  width: 80%;
+}
+.scoreboard__pane p span {
+  padding: 0 0.4em;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+.scoreboard__pane img {
+  /* border: solid thin orange; */
+  max-width: 20%;
+}
+
+.latest_score button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -118,39 +150,52 @@ nav {
   background: var(--button-bg-color-alt);
   color: var(--text-color-primary);
 }
-.sidepane--links{
-  width:100%;
+.sidepane--links {
+  width: 100%;
 }
-.sidepane--links ul{
-  margin-top:1em;
+.sidepane--links ul {
+  margin-top: 1em;
   display: flex;
-  flex-direction:column;
+  flex-direction: column;
+  align-items: flex-start;
   justify-content: space-between;
 }
 .sidepane--links li {
-  border-bottom: solid thin #888;
   padding: 1.5em 0.5em;
   margin: 0 1em;
   display: flex;
-  justify-content: flex-start;
   align-items: center;
 }
-.sidepane--links h5{
+.sidepane--links h5 {
   padding: 0 0 0 2em;
 }
+
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
 /* ========== rest of nav ============== */
 
 nav .toggle {
   /* container class for hamburger */
   background: none;
+  border: none;
   text-align: center;
   height: 100%;
   flex: 0 0 5%;
-  /*TODO: find out why harmburger class aligns left and needs flexbox hack*/
+  /*TODO: determine why harmburger class aligns left and needs flexbox hack*/
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .hamburger {
   display: block;
   position: relative;
@@ -162,6 +207,7 @@ nav .toggle {
   height: 3px;
   width: 20px;
   background: var(--text-color-primary);
+  transition: all 0.4s ease-in-out;
 }
 .hamburger::before,
 .hamburger::after {
@@ -175,6 +221,24 @@ nav .toggle {
 .hamburger::after {
   top: 6px;
 }
+.toggle__on .hamburger {
+  transition: all 0.2s ease-in-out;
+  visibility: hidden;
+}
+.toggle__on .hamburger::before,
+.toggle__on .hamburger::after {
+  visibility: visible;
+  background-color:var(--text-color-tri);
+}
+.toggle__on .hamburger::before {
+  bottom: 0;
+  transform: rotate(-45deg) translateX(5%);
+}
+.toggle__on .hamburger::after {
+  top: 0;
+  transform: rotate(45deg) translateX(0%);
+}
+
 .logo {
   font-family: "Trade Winds", cursive;
   font-size: 1.5rem;
@@ -193,8 +257,8 @@ nav .toggle {
 }
 .logout--btn {
   flex: 0 0 5%;
-  border: solid 1.5px crimson;
-  color: red;
+  border: solid 1.5px var(--text-color-tri);
+  color: var(--text-color-tri);
   margin-right: 1em;
   /* align-self: center;
   justify-self: center; */
