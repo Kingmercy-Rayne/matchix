@@ -6,6 +6,7 @@
   --button-bg-color: rgb(31, 29, 29);
   --button-bg-color-alt: #fff;
   --aside-theme-color:#2d2926ff;
+  --sidepane-theme-color:#1d273f;
 }
 
 * {
@@ -58,6 +59,7 @@ nav {
   align-items: center;
   justify-content: center;
   min-height: 8vh;
+  border-bottom: solid thin #ddd;
 }
 .sidepane {
   position: absolute;
@@ -65,7 +67,7 @@ nav {
   top: 8vh;
   left: 0;
   width: 20%;
-  background-color: #1d273f;
+  background-color: var(--sidepane-theme-color);
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -378,8 +380,11 @@ nav .toggle {
   margin: 0 0.2em;
   border: solid thin var(--aside-theme-color);
   /* background: var(--aside-theme-color); */
-  color: var(--text-color-primary);
+  color: var(--sidepane-theme-color);
   font-weight: bold;
+}
+.quicknav:first-child{
+  background: var(--aside-theme-color);
 }
 .article__title{
   /* border: solid thin crimson; */
