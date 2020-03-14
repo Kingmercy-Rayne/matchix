@@ -1,0 +1,22 @@
+.container{
+    width:100%;
+    min-height:100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.3);
+    
+}
+.container img{
+    filter: blur(2px);
+    position: absolute;
+    height: 100%;
+    z-index: -1;
+}
+.card{
+    width:35%;
+    min-height: 80vh;
+    border:var(--sidepane-theme-color);
+    background: rgba(29, 39, 63, 0.95);
+}

@@ -1,158 +1,78 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="../static/fa/css/all.min.css" rel="stylesheet" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Trade+Winds&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="../static/css/style.css" type="text/css" />
-    <title>Marzo</title>
-  </head>
-  <body>
-    <nav>
-      <div class="sidepane">
-        <div class="latest_score">
-          <h3>Latest Score</h3>
-          <h6>March 11, 2020</h6>
-          <hr>
-          <div class="scoreboard">
-            <div class="scoreboard__p">
-              <div class="scoreboard__pane">
-                <h3>1</h3>
-                <p>
-                  <img src="../static/img/Giannis-Zographos-English-Football-Club-Manchester-United.ico" alt="">
-                  <span>Manchester United</span>
-                </p>
-              </div>
-              <div class="scoreboard__pane">
-                <h3>4</h3>
-                <p>
-                  <img src="../static/img/Giannis-Zographos-English-Football-Club-Manchester-City.ico" alt="">
-                  <span>Manchester City</span>
-                </p>
-              </div>
-            </div>
-            <span class="tertiary-text">LIVE</span>
-          </div>
-          <button class="button--default">View Details
-            <i class="ico fa fa-arrow-right" aria-hidden="true"></i>
-          </button>
-        </div>
-        
-        <div class="sidepane--links">
-          <ul>
-            <li>
-              <span><i class="ico fa fa-star" aria-hidden="true"></i></span>
-              <h5>Latest Headlines</h5>
-            </li>
-            <li>
-              <span><i class="ico fa fa-table" aria-hidden="true"></i></span>
-              <h5>Standings</h5>
-            </li>
-            <li>
-              <span><i class="ico fa fa-calendar" aria-hidden="true"></i></span>
-              <h5>Roster</h5>
-            </li>
-            <li>
-              <span><i class="fa fa-users" aria-hidden="true"></i></i></span>
-              <h5>Statistics</h5>
-            </li>
-           
-          </ul>
-        </div>
-      </div>
+{% extends "base.html" %}
+{% block title%}Matchix{% endblock %}
 
-      <!-- rest of nav -->
-      <button class="toggle">
-        <span class="hamburger"></span>
-      </button>
-      <div class="logo">Matchix</div>
-      <div class="page_genre">Football</div>
-      <i class="ico fa fa-search" aria-hidden="true"></i>
-      <i class="ico fa fa-user" aria-hidden="true"></i>
-      <button class="button--default logout--btn">Logout</button>
-    </nav>
-    <!-- 
+{% block content %}
 
-      End of Nav
-
-     -->
-    <div class="wrapper">
-      <!-- main content -->
-      <main class="main">
-        <div class="article__header">
-          <div class="article--author">
-            <img src="../static/img/cesar-rincon-XHVpWcr5grQ-unsplash.jpg" alt="user profile img">
-            <span>
-              <h5>By - Alexander Kowalski</h5>
-              <h6>April 05, 2019</h6>
-            </span>
-          </div>
-          <div class="quicknav">
-            <button class="button--default">
-              <i class="ico fa fa-thumbs-down" aria-hidden="true"></i>
-            </button>
-            <button class="button--default">
-              <i class="ico fa fa-thumbs-up" aria-hidden="true"></i>
-            </button>
-          </div>
-        </div>
-        <h1 class="article__title">
-          The devastating impact of Joseph Barkley at West Ham
-        </h1>
-        <div class="article__subtitle">
-          <span><i class="ico fa fa-comment-alt" aria-hidden="true"></i>
-            <h6>18 comments</h6></span>
-          <span>
-            <i class="ico fa fa-eye" aria-hidden="true"></i>
-            <h6>1.2k views</h6></span>
-          <span><i class="ico fa fa-book" aria-hidden="true"></i>
-            <h6>267 currently reading</h6></span>
-        </div>
-        <img src="../static/img/marvin-ronsdorf-EqbE_NkXPfc-unsplash.jpg" alt="" class="article__cover">
-      </main>
-
-      <!-- aside content -->
-      <aside class="aside_content">
-        <div class="aside__header">
-          <h5 class="activeHeader">Trending</h5>
-          <h5>Most Read</h5>
-        </div>
-        <div class="aside--links">
-          <ul>
-            <li>
-              <span>1</i></span>
-              <span>
-              <h5>Lorem ipsum dolor sit amet consectetur.</h5>
-              <h6><b>92</b> comments</h6>
-            </span>
-            </li>
-            <li>
-              <span>2</i></span>
-              <span>
-              <h5>Lorem ipsum, dolor sit amet consectetur adipisicing.</h5>
-              <h6><b>56</b> comments</h6>
-            </span>
-            </li>
-            <li>
-              <span>3</i></span>
-              <span>
-              <h5>Lorem ipsum dolor sit amet.</h5>
-              <h6><b>27</b> comments</h6>
-            </span>
-            </li>
-          </ul>
-        </div>
-
-        <button class="button--default">More
-          <i class="ico fa fa-arrow-right" aria-hidden="true"></i>
-        </button>
-        </div>
-      </aside>
+ <!-- main content -->
+ <main class="main">
+  <div class="article__header">
+    <div class="article--author">
+      <img src="../static/img/cesar-rincon-XHVpWcr5grQ-unsplash.jpg" alt="user profile img">
+      <span>
+        <h5>By - Alexander Kowalski</h5>
+        <h6>April 05, 2019</h6>
+      </span>
     </div>
-    <script src="../static/js/app.js"></script>
-  </body>
-</html>
+    <div class="quicknav">
+      <button class="button--default">
+        <i class="ico fa fa-thumbs-down" aria-hidden="true"></i>
+      </button>
+      <button class="button--default">
+        <i class="ico fa fa-thumbs-up" aria-hidden="true"></i>
+      </button>
+    </div>
+  </div>
+  <h1 class="article__title">
+    The devastating impact of Joseph Barkley at West Ham
+  </h1>
+  <div class="article__subtitle">
+    <span><i class="ico fa fa-comment-alt" aria-hidden="true"></i>
+      <h6>18 comments</h6></span>
+    <span>
+      <i class="ico fa fa-eye" aria-hidden="true"></i>
+      <h6>1.2k views</h6></span>
+    <span><i class="ico fa fa-book" aria-hidden="true"></i>
+      <h6>267 currently reading</h6></span>
+  </div>
+  <img src="../static/img/marvin-ronsdorf-EqbE_NkXPfc-unsplash.jpg" alt="" class="article__cover">
+</main>
+
+<!-- aside content -->
+<aside class="aside_content">
+  <div class="aside__header">
+    <h5 class="activeHeader">Trending</h5>
+    <h5>Most Read</h5>
+  </div>
+  <div class="aside--links">
+    <ul>
+      <li>
+        <span>1</i></span>
+        <span>
+        <h5>Lorem ipsum dolor sit amet consectetur.</h5>
+        <h6><b>92</b> comments</h6>
+      </span>
+      </li>
+      <li>
+        <span>2</i></span>
+        <span>
+        <h5>Lorem ipsum, dolor sit amet consectetur adipisicing.</h5>
+        <h6><b>56</b> comments</h6>
+      </span>
+      </li>
+      <li>
+        <span>3</i></span>
+        <span>
+        <h5>Lorem ipsum dolor sit amet.</h5>
+        <h6><b>27</b> comments</h6>
+      </span>
+      </li>
+    </ul>
+  </div>
+
+  <button class="button--default">More
+    <i class="ico fa fa-arrow-right" aria-hidden="true"></i>
+  </button>
+</aside>
+
+
+{% endblock %}

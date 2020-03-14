@@ -7,6 +7,7 @@
   --button-bg-color-alt: #fff;
   --aside-theme-color:#2d2926ff;
   --sidepane-theme-color:#1d273f;
+  --sidepane-theme-color-rgb:rgb(29,39,63);
 }
 
 * {
