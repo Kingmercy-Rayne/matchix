@@ -17,9 +17,64 @@
   <body>
     <div class="wrapper">
       <div class="container">
-          <img src="../static/img/nathan-rogers-ObhCU6Vhoe8-unsplash.jpg" alt="" srcset="">
-        <div class="card"></div>
+        <img
+          src="../static/img/nathan-rogers-ObhCU6Vhoe8-unsplash.jpg"
+          alt=""
+          srcset=""
+        />
+        <div class="card">
+          <div class="card__banner">
+            Matchix
+          </div>
+          <form action="" method="post" class="registration-form" id="registration_form">
+            <div class="gender">
+              <input type="radio" name="gender" id="male" value="male" />
+              <i class="ico fa fa-male" aria-hidden="true"></i>
+              <label for="gender">Male</label>
+              <input type="radio" name="gender" id="female" value="female" />
+              <i class="ico fa fa-female" aria-hidden="true"></i>
+              <label for="gender">Female</label>
+            </div>
+            <span>
+              <label for="firstname">First Name</label>
+              <input type="text" name="firstname" id="firstname_input" />
+            </span>
+            <span>
+              <label for="email">Email Address</label>
+              <input
+                type="email"
+                name="email"
+                autocomplete="none"
+                id="email_input"
+              />
+              <h6 class="error-msg" id="error_txt_email">Email can't be less than 7 characters</h6>
+            </span>
+            <span>
+              <label for="password">Password</label>
+              <input
+                type="password"
+                name="password"
+                autocomplete="none"
+                id="password_input"
+              />
+              <h6 class="error-msg" id="error_txt_password">Password can't be less than 6 characters </h6>
+            </span>
+            <span>
+              <label for="confirmPassword">Confirm Password</label>
+              <input
+                type="password"
+                name="confirmPassword"
+                autocomplete="none"
+                id="confirmPassword_input"
+              />
+              <h6 class="error-msg" id="error_txt_confirmPassword">Password can't be less than 6 characters</h6>
+            </span>
+
+            <button type="submit" class="button--default" id="submit-btn" disabled>Register Now</button>
+          </form>
+        </div>
       </div>
     </div>
+    <script src="../static/js/registration.js"></script>
   </body>
 </html>

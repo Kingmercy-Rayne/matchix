@@ -29,7 +29,7 @@ const navSlide = () => {
       }
     });
   });
-};
+};  
 
 //init nav toggle
 
