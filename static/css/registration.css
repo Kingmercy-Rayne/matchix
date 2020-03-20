@@ -32,7 +32,7 @@
   background: linear-gradient(50deg, #060d1e, var(--sidepane-theme-color));
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-around;
   align-items: center;
   color: var(--text-color-alt);
 }
@@ -42,14 +42,34 @@
   }
 }
 
-.notifications{
-    padding:1em;
-    margin-top:0.1em;
-    color:crimson;
-    font-style:italic;
-    font-weight:lighter;
-    border:solid thin var(--text-color-dull);
-    background:rgb(198, 224, 198);
+.notifications {
+  padding: 1em;
+  margin-top: 0.1em;
+  color: crimson;
+  font-style: italic;
+  font-weight: lighter;
+  border: solid thin var(--text-color-dull);
+  background: rgb(198, 224, 198);
+}
+.recommendation {
+  color: var(--text-color-dull);
+  font-style: normal;
+  margin: 0;
+  border: none;
+  background: none;
+}
+.recommendation a {
+  color: var(--text-color-alt);
+  padding: 0 0.5em;
+}
+.error-msg {
+  color: var(--text-color-tri);
+  font-style: italic;
+  padding-top: 0.2em;
+  display: none;
+}
+.error-active {
+  display: block;
 }
 /* ==================== */
 input[type="text"],
@@ -123,7 +143,7 @@ button[type="submit"] {
   background: var(--text-color-tri);
   color: var(--text-color-alt);
   font-size: 1.2rem;
-  border-radius:1.7rem;
+  border-radius: 1.7rem;
 }
 /* --------------------- */
 .card__banner {
@@ -146,8 +166,8 @@ button[type="submit"] {
 form .ico {
   padding: 0 0.4em 0 1em;
 }
-.card span .ico {
-  /* passwod toggle */
+form .card span .ico {
+  /* overrides base and used for passwod toggle icon*/
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -155,7 +175,7 @@ form .ico {
   right: 0;
   display: none;
 }
-.gender {
+form .gender {
   width: 100%;
   display: flex;
   justify-content: flex-start;
@@ -167,27 +187,19 @@ label[for="gender"] {
   margin: 0 3em 0 0;
   color: var(--text-color-dull);
 }
-.error-msg {
-  color: var(--text-color-tri);
-  font-style: italic;
-  padding-top: 0.2em;
-  display: none;
-}
-.error-active {
-  display: block;
-}
+
 .password-toggle {
   /* TODO: solve specificity issue */
+  /* toggle/hide visibility icon */
   display: block !important;
 }
-.recommendation{
-    color:var(--text-color-dull);
-    font-style:normal;
-    margin: 0;
-    border:none;
-    background:none;
+
+form h5 {
+  /* I CBA to create a separate class... overrides notification and reminder classes */
+  align-self: flex-end;
 }
-.recommendation a{
-    color: var(--text-color-alt);
-    padding: 0 0.5em;
+.col-alt{
+  /* extends and overrides notification and reminder classes */
+  padding-right: 0;
+  color: var(--text-color-alt);
 }

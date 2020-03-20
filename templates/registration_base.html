@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% block head %}
+    <!-- font awesome import -->
+    <link
+      href="{{  url_for('static', filename='fa/css/all.min.css') }}"
+      rel="stylesheet"
+    />
+    <!-- google fonts import -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Trade+Winds&display=swap"
+      rel="stylesheet"
+    />
+    <!-- base css import -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+      type="text/css"
+    />
+    <!-- registration base template import -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/registration.css') }}"
+      type="text/css"
+    />
+    {% endblock %}
+    <title>{% block title %}{% endblock %}</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="container">
+        <img
+          src="../static/img/nathan-rogers-ObhCU6Vhoe8-unsplash.jpg"
+          alt=""
+          srcset=""
+        />
+        <div class="card">
+          {% with messages = get_flashed_messages() %}
+          {% if messages %}
+          {% for message in messages %}
+          <h5 class="notifications">{{ message }}</h5>
+          {% endfor %}
+          {% endif %}
+          {% endwith %}
+          <div class="card__banner">
+            Matchix
+          </div>
+          {% block form %}{% endblock %}
+          <h5 class="notifications recommendation">
+            Already have an account?<a
+              href=" {{ url_for('login') }} "
+              >Log In</a
+            >
+          </h5>
+        </div>
+      </div>
+    </div>
+    <script src=" {{ url_for('static', filename='js/registration.js') }} "></script>
+  </body>
+</html>

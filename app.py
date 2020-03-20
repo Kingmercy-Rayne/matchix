@@ -1,4 +1,4 @@
-from flask import Flask, request, url_for, render_template, redirect
+from flask import Flask, request, url_for, render_template, redirect, flash
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
@@ -19,14 +19,14 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/login')
+@app.route('/login', methods=['GET', 'POST'])
 def login():
     return render_template('login.html')
 
 
-@app.route('/register')
+@app.route('/signup')
 def register():
-    return render_template('register.html')
+    return render_template('signup.html')
 
 
 if __name__ == "__main__":

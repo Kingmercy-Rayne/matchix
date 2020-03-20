@@ -1,0 +1,63 @@
+{% extends "registration_base.html" %}
+
+{% block title %} Log in {% endblock %}
+{% block form %}
+    
+<form
+action=""
+method="post"
+class="registration-form"
+id="registration_form"
+>
+
+<span>
+  <label for="email">Email Address</label>
+  <input
+    type="email"
+    name="email"
+    autocomplete="none"
+    id="email_input"
+  />
+  <h6 class="error-msg" id="error_txt_email">
+    Email can't be less than 7 characters
+  </h6>
+</span>
+<span>
+  <label for="password">Password</label>
+
+  <input
+    type="password"
+    name="password"
+    autocomplete="none"
+    id="password_input"
+  />
+  <i
+    class="ico fa fa-eye"
+    id="reveal_password1"
+    aria-hidden="true"
+  ></i>
+  <h6 class="error-msg" id="error_txt_password">
+    Password can't be less than 6 characters
+  </h6>
+</span>
+<h5>
+  <a
+    href="http://"
+    class="notifications recommendation col-alt"
+    target="_blank"
+    rel="noopener noreferrer"
+    >Forgot Password?</a
+  >
+</h5>
+
+<button
+  type="submit"
+  class="button--default"
+  id="submit-btn"
+  disabled
+>
+  Log in
+</button>
+</form>
+{% endblock %}
+    
