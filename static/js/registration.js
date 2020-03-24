@@ -1,4 +1,7 @@
-const registrationInputValidator = () => {
+// SIGNUP Validator
+// ...
+// ...
+const signupInputValidator = () => {
   //inputs
   const form = document.getElementById("registration_form");
   const firstname = document.getElementById("firstname_input");
@@ -105,5 +108,87 @@ const registrationInputValidator = () => {
   }
 };
 
+
+// LOGIN VALIDATOR
+// ...
+// ...
+
+const loginInputValidator = () => {
+  //inputs
+  const form = document.getElementById("registration_form");
+  const email = document.getElementById("email_input");
+  const password = document.getElementById("password_input");
+  const toggle_btn1 = document.getElementById("reveal_password1");
+  const submit_btn = document.getElementById("submit-btn");
+
+  //CSS error-message class selectors to be toggled
+  const error_txt_email = document.getElementById("error_txt_email");
+  const error_txt_password = document.getElementById("error_txt_password");
+  
+
+  //Event Listeners
+  //...
+  email.addEventListener("input", validateInput);
+  password.addEventListener("input", validateInput);
+
+  password.addEventListener("focus", toggleBtn_Show);
+  password.addEventListener("blur", toggleBtn_Hide);
+
+  //toggle password-toggle-icon visibility
+  function toggleBtn_Show(e) {
+    const sibling = e.target.nextElementSibling;
+    console.log(sibling);
+    sibling.classList.add("password-toggle");
+  }
+  function toggleBtn_Hide(e) {
+    const sibling = e.target.nextElementSibling;
+    console.log(sibling);
+    sibling.classList.remove("password-toggle");
+  }
+
+  //TODO: make toggler work...ARGHh
+  toggle_btn1.addEventListener("click", () => {
+    password.focus();
+    console.log("just tapped");
+    password.type == "password"
+      ? (password.type = "text")
+      : (password.type = "password");
+  });
+
+  //show password as plaintext
+  function passwordReveal(e) {
+    e.target.name;
+  }
+
+  //Input validator
+  function validateInput(e) {
+    console.log(e.target.value);
+    const value = e.target.value;
+    const target = e.target.name;
+
+    if (target === "email") {
+      if (value.length > 6) {
+        submit_btn.removeAttribute("disabled");
+        error_txt_email.classList.remove("error-active");
+      } else {
+        submit_btn.setAttribute("disabled", false);
+        error_txt_email.classList.add("error-active");
+      }
+    }
+
+    if (target === "password") {
+      if (value.length > 5) {
+        submit_btn.removeAttribute("disabled");
+        error_txt_password.classList.remove("error-active");
+      } else {
+        submit_btn.setAttribute("disabled", false);
+        error_txt_password.classList.add("error-active");
+      }
+    }
+
+    
+  }
+};
+
 //init
-registrationInputValidator();
+

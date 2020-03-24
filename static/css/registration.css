@@ -9,39 +9,6 @@
   --sidepane-theme-color: #1d273f;
   --sidepane-theme-color-rgb: rgb(29, 39, 63);
 }
-
-.container {
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  background-color: rgba(0, 0, 0, 0.3);
-}
-.container img {
-  filter: blur(3px);
-  position: absolute;
-  height: 100%;
-  z-index: -1;
-}
-.card {
-  width: 35%;
-  min-height: 80vh;
-  border: solid thin var(--sidepane-theme-color);
-  background: linear-gradient(50deg, #060d1e, var(--sidepane-theme-color));
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  color: var(--text-color-alt);
-}
-@media (max-width: 1000px) {
-  .card {
-    width: 80%;
-  }
-}
-
 .notifications {
   padding: 1em;
   margin-top: 0.1em;
@@ -71,6 +38,43 @@
 .error-active {
   display: block;
 }
+.container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.3);
+  /*TODO: find proper fix for probably useless box-shadow. */
+  box-shadow: -0.3rem 0.3rem 15px 2px rgba(1, 1, 1, 0.1),
+    0.3rem -0.3rem 15px 2px rgba(1, 1, 1, 0.1);
+}
+.container img {
+  filter: blur(3px);
+  position: absolute;
+  height: 100%;
+  z-index: -1;
+}
+.card {
+  width: 35%;
+  min-height: 80vh;
+  border: none;
+  background: linear-gradient(50deg, #060d1e, var(--sidepane-theme-color));
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  color: var(--text-color-alt);
+  box-shadow: -0.3rem 0.3rem 10px 5px rgba(1, 1, 1, 0.4);
+  border-radius:8px;
+}
+@media (max-width: 1000px) {
+  .card {
+    width: 80%;
+  }
+}
+
 /* ==================== */
 input[type="text"],
 input[type="email"],
@@ -166,7 +170,7 @@ button[type="submit"] {
 form .ico {
   padding: 0 0.4em 0 1em;
 }
-form .card span .ico {
+.card span .ico {
   /* overrides base and used for passwod toggle icon*/
   position: absolute;
   top: 50%;
@@ -175,7 +179,7 @@ form .card span .ico {
   right: 0;
   display: none;
 }
-form .gender {
+.card .gender {
   width: 100%;
   display: flex;
   justify-content: flex-start;
@@ -198,7 +202,7 @@ form h5 {
   /* I CBA to create a separate class... overrides notification and reminder classes */
   align-self: flex-end;
 }
-.col-alt{
+.col-alt {
   /* extends and overrides notification and reminder classes */
   padding-right: 0;
   color: var(--text-color-alt);

@@ -38,26 +38,22 @@
           srcset=""
         />
         <div class="card">
-          {% with messages = get_flashed_messages() %}
-          {% if messages %}
-          {% for message in messages %}
+          {% with messages = get_flashed_messages() %} {% if messages %} {% for
+          message in messages %}
           <h5 class="notifications">{{ message }}</h5>
-          {% endfor %}
-          {% endif %}
-          {% endwith %}
+          {% endfor %} {% endif %} {% endwith %}
           <div class="card__banner">
             Matchix
           </div>
-          {% block form %}{% endblock %}
-          <h5 class="notifications recommendation">
-            Already have an account?<a
-              href=" {{ url_for('login') }} "
-              >Log In</a
-            >
-          </h5>
+          <!-- block for individual forms -->
+          {% block form %} {% endblock %}
+          <!-- block for individual recommendation options.. ala- signup and login -->
+          {% block recommendation %} {% endblock recommendation %}
         </div>
       </div>
     </div>
     <script src=" {{ url_for('static', filename='js/registration.js') }} "></script>
+    <!-- block for individual form validators [activators] -->
+    {% block script %}{% endblock %}
   </body>
 </html>

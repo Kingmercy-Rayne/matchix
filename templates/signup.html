@@ -57,3 +57,17 @@
   </button>
 </form>
 {% endblock %}
+
+<!-- recommendation option -->
+{% block recommendation %}
+<h5 class="notifications recommendation">
+  Already have an account?<a href=" {{ url_for('login') }} ">Log In</a>
+</h5>
+{% endblock %}
+
+<!-- run validator -->
+{% block script %}
+<script>
+  signupInputValidator();
+</script>
+{% endblock script %}
